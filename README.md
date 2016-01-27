@@ -1,14 +1,20 @@
 
+<h2>Instalación</h2>
+
+<pre>
+clone https://github.com/jordikid/Server-SOAP-Python3.git
+cd Server-SOAP-Python3/
+</pre>
+
+<h2>Iniciar Servidor SOAP</h2>
+<pre>python3 server.py</pre>
+
+<h2>Iniciar Cliente SOAP</h2>
+<pre>python3 client.py</pre>
 
 <h1>Servidor SOAP Python 3 con pysimplesoap</h1>
 
 Para crear un servidor SOAP con Python 3 una librería bastante buena y sencilla de utilizar es <b>pysimplesoap</b>.
-
-<h2>Instalación</h2>
-
-<code>pip3 install pysimplesoap</code>
-
-<h2>Código</h2>
 
 <ul>
 <li>Primero importamos de la librería pysimplesoap lo que vamos a utilizar, en este caso <i>SoapDispatcher</i> y <i>SOAPHandler</i></li>
