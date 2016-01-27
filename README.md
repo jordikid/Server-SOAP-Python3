@@ -1,5 +1,6 @@
-# Server-SOAP-Python3
-Servidor SOAP en Python 3
+
+
+<h1>Servidor SOAP Python 3 con pysimplesoap</h1>
 
 Para crear un servidor SOAP con Python 3 una librería bastante buena y sencilla de utilizar es <b>pysimplesoap</b>.
 
@@ -48,3 +49,32 @@ import http.server</pre>
 httpd = http.server.HTTPServer(("localhost", 8008), SOAPHandler)
 httpd.dispatcher = dispatcher
 httpd.serve_forever()</pre>
+
+
+<h1>Cliente SOAP Python 3 con pysimplesoap</h1>
+
+Para crear un cliente SOAP con Python 3 una librería bastante buena y sencilla de utilizar es <b>pysimplesoap</b>.
+
+<ul>
+<li>Primero importamos de la librería pysimplesoap lo que vamos a utilizar, en este caso <i>SoapDispatcher</i> y <i>SOAPHandler</i></li>
+</ul>
+<pre>from pysimplesoap.client import SoapClient, SoapFault</pre>
+
+<ul>
+<li>Creamos el cliente de una forma muy sencilla</li>
+</ul>
+<pre>client = SoapClient(
+    location = "http://localhost:8008/",
+    action = 'http://localhost:8008/', # SOAPAction
+    namespace = "http://example.com/sample.wsdl",
+    soap_ns='soap',
+    trace = True,
+    ns = False)</pre>
+    
+<ul>
+<li>Llamamos al servidor SOAP e imprimimos la respuesta que nos devuelve.</li>
+</ul>
+<pre>response = client.OTA_VehRes(call=ota)
+result = response.Result
+print (result)</pre>
+
